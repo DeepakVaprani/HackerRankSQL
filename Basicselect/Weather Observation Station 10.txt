@@ -1,0 +1,3 @@
+select distinct City 
+from Station
+where Upper(Substr(City,length(city),1)) Not in ('A','E','I','O','U');
