@@ -1,0 +1,10 @@
+WITH RECURSIVE Pattern AS (
+  SELECT 1 AS RowNumber, REPEAT('* ', 20) AS Asterisks
+  UNION ALL
+  SELECT RowNumber + 1, SUBSTRING(Asterisks, 1, LENGTH(Asterisks) - 2) AS Asterisks
+  FROM Pattern
+  WHERE RowNumber < 20
+)
+SELECT Asterisks
+FROM Pattern
+ORDER BY RowNumber;
