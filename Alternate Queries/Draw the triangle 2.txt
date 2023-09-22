@@ -1,0 +1,8 @@
+with recursive pattern as 
+(
+    select 1 as num
+    union all
+    select num + 1 from pattern
+    where num < 20
+)
+select repeat(' * ',num) from pattern
